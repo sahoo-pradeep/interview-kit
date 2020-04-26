@@ -1,8 +1,8 @@
 package design_patterns.behavioral_patterns.p1_chain_of_responsibility;
 
-import behavioral_patterns.p1_chain_of_responsibility.handler.CEO;
-import behavioral_patterns.p1_chain_of_responsibility.handler.Director;
-import behavioral_patterns.p1_chain_of_responsibility.handler.VP;
+import design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.CEO;
+import design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.Director;
+import design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.VP;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;

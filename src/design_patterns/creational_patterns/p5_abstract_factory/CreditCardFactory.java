@@ -1,7 +1,7 @@
 package design_patterns.creational_patterns.p5_abstract_factory;
 
-import creational_patterns.p5_abstract_factory.credit_card.CreditCard;
-import creational_patterns.p5_abstract_factory.validator.Validator;
+import design_patterns.creational_patterns.p5_abstract_factory.credit_card.CreditCard;
+import design_patterns.creational_patterns.p5_abstract_factory.validator.Validator;
 
 // Abstract Factory
 public abstract class CreditCardFactory {

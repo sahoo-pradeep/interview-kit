@@ -1,6 +1,6 @@
 package design_patterns.creational_patterns.p5_abstract_factory.validator;
 
-import creational_patterns.p5_abstract_factory.credit_card.CreditCard;
+import design_patterns.creational_patterns.p5_abstract_factory.credit_card.CreditCard;
 
 public class AmexGoldValidator implements Validator {
     @Override
