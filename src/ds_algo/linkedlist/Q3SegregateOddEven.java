@@ -1,6 +1,6 @@
 package ds_algo.linkedlist;
 
-public class Q3SeggregateOddEven {
+public class Q3SegregateOddEven {
     public static void main(String[] args) {
         SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
         list.add(11);
