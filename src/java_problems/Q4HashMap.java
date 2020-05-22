@@ -6,6 +6,7 @@ import java.util.StringJoiner;
 public class Q4HashMap {
     public static void main(String[] args) {
         MyHashMap<String, String> map = new MyHashMap<>();
+        System.out.println("map.isEmpty(): " + map.isEmpty());
         System.out.println("put(1, One): " + map.put("1", "One"));
         System.out.println("put(2, Two): " + map.put("2", "Two"));
         System.out.println("put(1, Ek): " + map.put("1", "Ek"));
@@ -19,6 +20,7 @@ public class Q4HashMap {
 
         System.out.println();
         System.out.println(map.size());
+        System.out.println("map.isEmpty(): " + map.isEmpty());
 
         System.out.println();
         System.out.println("containKey(1): " + map.containsKey("1"));
