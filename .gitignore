@@ -57,3 +57,6 @@ build/
 
 ### Apple FIles ###
 .DS_Store
+
+### Generated files
+address.csv
