@@ -1,10 +1,6 @@
 package java_problems;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Q2ComparatorVsComparable {
     public static void main(String[] args) {
