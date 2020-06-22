@@ -1,5 +1,7 @@
 package design_patterns.behavioral_patterns.p6_memento;
 
+import java.util.Objects;
+
 // originator
 public class Employee {
     private String name;
