@@ -22,6 +22,13 @@ public class GCDemo {
         }
     }
 
+    public static void main(String... args) {
+        for (int i = 0; i < 500_000; i++){
+            GCMe obj = new GCMe();
+            printAddresses(obj);
+        }
+    }
+
     private static void printAddresses(Object obj) {
         Object[] array = new Object[]{obj};
 
@@ -36,30 +43,4 @@ public class GCDemo {
                 System.err.println("Unsupported Address Size");
         }
     }
-
-    public static void main(String... args) {
-        for (int i = 0; i < 500_000; i++){
-            GCMe obj = new GCMe();
-            printAddresses(obj);
-        }
-    }
-}
-
-class GCMe{
-    long a;
-    long b;
-    long c;
-    long d;
-    long e;
-    long f;
-    long g;
-    long h;
-    long i;
-    long j;
-    long k;
-    long l;
-    long m;
-    long n;
-    long o;
-    long p;
 }
