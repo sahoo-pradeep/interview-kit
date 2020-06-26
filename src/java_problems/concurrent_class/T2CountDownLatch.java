@@ -28,7 +28,7 @@ public class T2CountDownLatch {
                 e.printStackTrace();
             }
 
-        });
+        }, "threadA");
 
         threadA.start();
         MyLogger.log("Started");
