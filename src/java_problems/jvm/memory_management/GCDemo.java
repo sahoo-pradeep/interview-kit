@@ -1,11 +1,11 @@
-package java_problems.jvm;
+package java_problems.jvm.memory_management;
 
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 
 /*
-java -cp out\production\interview-kit java_problems.jvm.GCDemo > address.csv
+java -cp out\production\interview-kit java_problems.jvm.memory_management.GCDemo > address.csv
 
 Output: SeaSaw shape address -> assign address -> GC -> lower address
  */

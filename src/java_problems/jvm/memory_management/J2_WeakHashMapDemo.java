@@ -1,4 +1,4 @@
-package java_problems.jvm;
+package java_problems.jvm.memory_management;
 
 import java.time.LocalDateTime;
 import java.util.WeakHashMap;

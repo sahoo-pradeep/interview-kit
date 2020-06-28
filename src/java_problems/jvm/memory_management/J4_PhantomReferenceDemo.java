@@ -1,4 +1,4 @@
-package java_problems.jvm;
+package java_problems.jvm.memory_management;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.Reference;
@@ -11,7 +11,7 @@ public class J4_PhantomReferenceDemo {
         ReferenceQueue<Person> queue = new ReferenceQueue<>();
         List<FinalizePerson> finalizeList = new ArrayList<>();
         List<Person> people = new ArrayList<>();
-        
+
         for (int i = 0; i < 5; i++){
             Person p = new Person();
             people.add(p);
