@@ -62,4 +62,4 @@ build/
 address.csv
 
 ### Ignore files
-!/src/test/
+/src/test/**
