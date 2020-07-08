@@ -60,3 +60,6 @@ build/
 
 ### Generated files
 address.csv
+
+### Ignore files
+!/src/test/
