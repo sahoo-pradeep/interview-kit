@@ -1,26 +1,28 @@
 package design_patterns.creational_patterns.p2_builder;
 
 public class LunchOrder {
+    // Make all variables final to make it immutable
+    private final String rice;
+    private final String gravy;
+    private final String drinks;
+    private final String dessert;
+
     // Create a static class Builder
     public static class Builder {
         // Create the same fields
-        private String rice;
-        private String gravy;
+
+        // Required parameters
+        private final String rice;
+        private final String gravy;
+
+        //Optional parameters
         private String drinks;
         private String dessert;
 
         // We can add mandatory fields here
-        public Builder(){
-        }
-
-        public Builder rice(String rice){
+        public Builder(String rice, String gravy){
             this.rice = rice;
-            return this;
-        }
-
-        public Builder gravy(String gravy){
             this.gravy = gravy;
-            return this;
         }
 
         public Builder drinks(String drinks){
@@ -38,12 +40,6 @@ public class LunchOrder {
             return new LunchOrder(this);
         }
     }
-
-    // Make all variables final to make it immutable
-    private final String rice;
-    private final String gravy;
-    private final String drinks;
-    private final String dessert;
 
     // Create a constructor with takes Builder reference
     public LunchOrder(Builder builder){

@@ -51,9 +51,8 @@ public class P2Builder {
         /*
         Using Builder
          */
-        LunchOrder.Builder lunchBuilder = new LunchOrder.Builder();
         LunchOrder lunchOrder3 =
-                lunchBuilder.rice(BIRYANI).drinks(COCACOLA).dessert(GULAB_JAMUN).build();
+                new LunchOrder.Builder(BIRYANI, CHICKEN_MASALA).drinks(COCACOLA).dessert(GULAB_JAMUN).build();
 
     }
 }
