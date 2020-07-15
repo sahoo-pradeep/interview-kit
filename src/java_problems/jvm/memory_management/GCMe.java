@@ -1,4 +1,4 @@
-package java_problems.jvm;
+package java_problems.jvm.memory_management;
 
 /**
  * Class with large object created to make GC happen quicker.
