@@ -7,7 +7,9 @@ public class LunchOrder {
     private final String drinks;
     private final String dessert;
 
-    // Create a static class Builder
+    // Create a static class Builder (otherwise LunchOrder.Builder() will not be possible)
+    // Parameter validity checks in constructor and methods - throw IllegalArgumentException
+
     public static class Builder {
         // Create the same fields
 
@@ -15,22 +17,25 @@ public class LunchOrder {
         private final String rice;
         private final String gravy;
 
-        //Optional parameters
-        private String drinks;
-        private String dessert;
+        //Optional parameters - initialized to default values
+        private String drinks = "";
+        private String dessert = "";
 
         // We can add mandatory fields here
         public Builder(String rice, String gravy){
+            //Add validity check for rice and gravy
             this.rice = rice;
             this.gravy = gravy;
         }
 
         public Builder drinks(String drinks){
+            //Add validity check for drinks
             this.drinks = drinks;
             return this;
         }
 
         public Builder dessert(String dessert){
+            //Add validity check for dessert
             this.dessert = dessert;
             return this;
         }
