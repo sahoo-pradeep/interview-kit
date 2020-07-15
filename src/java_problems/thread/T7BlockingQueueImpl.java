@@ -41,7 +41,7 @@ public class T7BlockingQueueImpl {
     }
 
     public static class MyBlockingQueue<T> {
-        private List<T> queue = new LinkedList<>();
+        private LinkedList<T> queue = new LinkedList<>();
         private int length;
 
         public MyBlockingQueue(int length) {
@@ -73,7 +73,7 @@ public class T7BlockingQueueImpl {
                 notifyAll();
             }
             Thread.sleep(200);
-            T value = queue.remove(0);
+            T value = queue.remove();
             MyLogger.log("[" + Thread.currentThread().getName() + "] Removed: " + value);
             return value;
         }

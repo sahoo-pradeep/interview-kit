@@ -7,7 +7,7 @@ import java.util.*;
 // eg. mumbai and mumbai2 are same location because both have city = MUMBAI and state = MAHARASHTRA
 // 2. if we get the same location again, update the pickup and delivery value.
 // Final output - [MUMBAI, MAHARASHTRA, true, true], [BENGALURU, KARNATAKA, true, false]
-public class LocationProblem {
+public class LocationClient {
     private static final String MUMBAI = "Mumbai";
     private static final String MAHARASHTRA = "Maharashtra";
     private static final String BENGALURU = "Bengaluru";
@@ -29,14 +29,16 @@ public class LocationProblem {
         System.out.println("Input:");
         System.out.println(inputLocations);
 
-        List<Location> outputLocations = processLocations(inputLocations);
+        List<Location> outputLocations = LocationServer.processLocations(inputLocations);
         System.out.println("Output:");
         System.out.println(outputLocations);
     }
+}
 
+class LocationServer {
     public static List<Location> processLocations(List<Location> inputLocations){
-        // TODO: write Code
-        return null;
+        // TODO: fix Code
+        return inputLocations;
     }
 
     public static void copy(List<Location> inputLocations){
