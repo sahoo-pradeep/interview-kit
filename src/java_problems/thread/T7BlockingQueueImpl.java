@@ -9,18 +9,19 @@ A thread trying to dequeue in an empty queue is blocked until some other thread 
 import utils.MyLogger;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class T7BlockingQueueImpl {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyBlockingQueue<Integer> queue = new MyBlockingQueue<>(3);
         Thread threadA = new Thread(() -> {
             for (int i = 0; i < 6; i++) {
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(400);
                     queue.enqueue(i);
+                    System.out.println("Enqueue: " + i);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
         }, "ThreadA");
@@ -28,15 +29,18 @@ public class T7BlockingQueueImpl {
         Thread threadB = new Thread(() -> {
             for (int i = 0; i < 6; i++) {
                 try {
-                    Thread.sleep(1000);
-                    queue.dequeue();
+                    Thread.sleep(900);
+                    int out = queue.dequeue();
+                    System.out.println("Dequeue: " + out);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
         }, "ThreadB");
 
         threadA.start();
+        Thread.sleep(50);
         threadB.start();
     }
 
@@ -55,7 +59,7 @@ public class T7BlockingQueueImpl {
                 MyLogger.log("[" + Thread.currentThread().getName() + "] Awake in enqueue: " + value);
             }
             MyLogger.log("[" + Thread.currentThread().getName() + "] Adding: " + value);
-            Thread.sleep(200);
+
             queue.add(value);
             if (queue.size() == 1) {
                 notifyAll();
@@ -63,7 +67,7 @@ public class T7BlockingQueueImpl {
         }
 
         public synchronized T dequeue() throws InterruptedException {
-            while (queue.size() == 0) {
+            while (queue.isEmpty()) {
                 MyLogger.log("[" + Thread.currentThread().getName() + "] Waiting in dequeue");
                 wait();
                 MyLogger.log("[" + Thread.currentThread().getName() + "] Awake in dequeue");
@@ -72,7 +76,7 @@ public class T7BlockingQueueImpl {
             if (queue.size() == length) {
                 notifyAll();
             }
-            Thread.sleep(200);
+
             T value = queue.remove();
             MyLogger.log("[" + Thread.currentThread().getName() + "] Removed: " + value);
             return value;
