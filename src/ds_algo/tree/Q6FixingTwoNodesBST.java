@@ -1,7 +1,5 @@
 package ds_algo.tree;
 
-import sun.applet.AppletResourceLoader;
-
 /*
 Fixing Two Nodes in BST:
 Link: https://www.geeksforgeeks.org/fix-two-swapped-nodes-of-bst/

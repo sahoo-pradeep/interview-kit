@@ -1,6 +1,20 @@
 package java_problems.basic_interview;
 
 public class PolymorphismDemo {
+    public static void main(String[] args) {
+        Animal someAnimal = new Animal();
+        Animal anotherAnimal = new Dog();
+        Dog myDog = new Dog();
+
+        someAnimal.print();
+        anotherAnimal.print();
+        myDog.print();
+
+        someAnimal.canDo();
+        anotherAnimal.canDo();
+        myDog.canDo();
+    }
+
     public static class Animal {
         public static void print(){ System.out.println("Animal"); }
         public void canDo(){ System.out.println("Anything"); }
@@ -11,17 +25,4 @@ public class PolymorphismDemo {
         public void canDo(){ System.out.println("Bark"); }
     }
 
-    public static void main(String[] args) {
-        Animal a = new Animal();
-        Animal b = new Dog();
-        Dog c = new Dog();
-
-        a.print();
-        b.print();
-        c.print();
-
-        a.canDo();
-        b.canDo();
-        c.canDo();
-    }
 }

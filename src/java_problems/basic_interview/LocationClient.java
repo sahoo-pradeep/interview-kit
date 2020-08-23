@@ -40,25 +40,35 @@ class LocationServer {
         // TODO: fix Code
         return inputLocations;
     }
-
-    public static void copy(List<Location> inputLocations){
-        //TODO: Create a new List - Shallow copy
-
-        //TODO: Create a new List - Deep Copy
-    }
 }
 
 class Location {
-    String city;
-    String state;
-    boolean pickup;
-    boolean delivery;
+    private String city;
+    private String state;
+    private boolean pickup;
+    private boolean delivery;
 
     public Location(String city, String state, boolean pickup, boolean delivery) {
         this.city = city;
         this.state = state;
         this.pickup = pickup;
         this.delivery = delivery;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public boolean isPickup() {
+        return pickup;
+    }
+
+    public boolean isDelivery() {
+        return delivery;
     }
 
     @Override
