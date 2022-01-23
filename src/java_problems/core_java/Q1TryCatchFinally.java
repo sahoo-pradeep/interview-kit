@@ -1,4 +1,4 @@
-package java_problems;
+package java_problems.core_java;
 
 public class Q1TryCatchFinally {
     public static void main(String[] args) {

@@ -12,30 +12,30 @@ as the given number, print any of them.
 */
 public class Q3SubArrayWithGivenSumNegative {
     public static void main(String[] args) {
-        int[] input = new int[] {10, 2, -2, -20, 10};
+        int[] input = new int[]{10, 2, -2, -20, 10};
         int sum = -10; //Try with 0 for check2
-        solve(input.length, sum, input);
+        solve2(input.length, sum, input);
     }
 
-    private static void solve(int size, int sum, int[] input) {
-        Map<Integer, Integer> map = new HashMap<>();
-        int curr_sum = 0;
+    private static void solve2(int size, int sum, int[] input) {
+        Map<Integer, Integer> sumToIndexMap = new HashMap<>(size);
+        int sumTillIndex = 0;
 
         for (int i = 0; i < size; i++) {
-            curr_sum += input[i];
-            if (curr_sum == sum) {
-                System.out.println("Check1");
-                System.out.println("Result:" + 0 + " " + i);
+            sumTillIndex += input[i];
+            if (sumTillIndex == sum) {
+                System.out.println("0, " + i);
                 return;
             }
-            if (map.get(curr_sum - sum) != null) {
-                System.out.println("Check2");
-                System.out.println("Result:" + map.get(curr_sum - sum) + " " + i);
+            int compositeSum = sum - sumTillIndex;
+            if (sumToIndexMap.get(compositeSum) != null) {
+                System.out.println(sumToIndexMap.get(compositeSum) + ", " + i);
                 return;
+            } else {
+                sumToIndexMap.put(sumTillIndex, i);
             }
-            System.out.println("Update");
-            map.put(curr_sum, i);
         }
-        System.out.println("No such sub-array exists");
+
+        System.out.println("-1");
     }
 }

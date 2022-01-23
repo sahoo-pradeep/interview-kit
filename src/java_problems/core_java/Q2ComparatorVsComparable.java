@@ -1,4 +1,4 @@
-package java_problems;
+package java_problems.core_java;
 
 import java.util.*;
 
@@ -100,7 +100,7 @@ public class Q2ComparatorVsComparable {
         }
     }
 
-    // Comparator Class to used to sort Objects based on custom logic
+    // Comparator Class is used to sort Objects based on custom logic
     // We can create multiple Comparator class as per need
     static class StudentMarksComparator implements Comparator<Student> {
         @Override

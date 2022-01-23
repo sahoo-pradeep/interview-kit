@@ -1,4 +1,4 @@
-package java_problems;
+package java_problems.core_java;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +35,6 @@ public class Q3ImmutableClass {
         public ImmutableClass(int i, String str, HashMap<String, String> map) {
             this.i = i;
             this.str = str;
-            //this.map = map;
             this.map = new HashMap<>();
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 this.map.put(entry.getKey(), entry.getValue());
@@ -52,9 +51,12 @@ public class Q3ImmutableClass {
         }
 
         // 6. Perform 'cloning of 'object' to return a copy
-        public HashMap<String, String> getMap() {
-            //return map;
-            return (HashMap<String, String>) this.map.clone();
+        public Map<String, String> getMap() {
+            Map<String, String> clonedMap = new HashMap<>();
+            for (String key : map.keySet()) {
+                clonedMap.put(key, this.map.get(key));
+            }
+            return clonedMap;
         }
     }
 }

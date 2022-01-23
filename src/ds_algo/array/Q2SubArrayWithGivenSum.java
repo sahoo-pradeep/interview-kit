@@ -10,7 +10,7 @@ given number. (first such occurring sub-array from the left)
 Return: start and end index if found otherwise return -1
 1
 5 12
-1 2 3 7 5
+1 3 3 7 5
 
 */
 public class Q2SubArrayWithGivenSum {
@@ -32,27 +32,25 @@ public class Q2SubArrayWithGivenSum {
 
             solve(sum, size, input);
         }
-
     }
 
     private static void solve(int sum, int size, int[] input) {
-        int start = 0;
-        int end = 0;
-        int result = input[start];
+        int left = 0;
+        int right = 0;
 
-        while (start <= end && end < size) {
-            if (result == sum) {
-                System.out.println(start + " " + end);
+        int currentSum = input[0];
+
+        while (left < size && right < size) {
+            if (currentSum == sum) {
+                System.out.println("[" + left + ", " + right + "]");
                 return;
-            } else if (result < sum) {
-                end++;
-                result += end < size ? input[end] : 0;
+            }else if (currentSum < sum) {
+                currentSum += input[++right];
             } else {
-                result -= input[start];
-                start++;
+                currentSum -= input[left++];
             }
         }
 
-        System.out.println(-1);
+        System.out.println("-1");
     }
 }
