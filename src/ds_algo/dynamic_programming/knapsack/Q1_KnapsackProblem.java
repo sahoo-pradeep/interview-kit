@@ -1,19 +1,18 @@
-package ds_algo.dynamic_programming;
+package ds_algo.dynamic_programming.knapsack;
 
 /*
 Link: https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
 Video(Aditya Verma): https://www.youtube.com/watch?v=l02UxPYRmCQ&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=3&ab_channel=AdityaVerma
  */
-public class Q2KnapsackProblem {
+public class Q1_KnapsackProblem {
     public static void main(String[] args) throws Exception {
         // Test case 1
         int[] weights = {10, 20, 30};
         int[] values = {60, 100, 120};
         int capacity = 50;
 
-        int[][] cachedValues1 = new int[weights.length + 1][capacity + 1];
-        int sol1 = knapsack(weights, values, capacity, weights.length, cachedValues1);
-        int sol1TopDown = topDown(weights, values, capacity, weights.length);
+        int sol1 = knapsackMemoization(weights, values, capacity, weights.length);
+        int sol1TopDown = knapsackTopDown(weights, values, capacity, weights.length);
         System.out.println("Solution (mem): " + sol1 + " is " + (sol1 == 220));
         System.out.println("Solution (top down): " + sol1TopDown + " is " + (sol1TopDown == 220));
 
@@ -21,26 +20,27 @@ public class Q2KnapsackProblem {
         weights = new int[]{1, 2};
         values = new int[]{3, 4};
         capacity = 2;
-        int[][] cachedValues2 = new int[weights.length + 1][capacity + 1];
 
-        int sol2 = knapsack(weights, values, capacity, weights.length, cachedValues2);
-        int sol2TopDown = topDown(weights, values, capacity, weights.length);
+        int sol2 = knapsackMemoization(weights, values, capacity, weights.length);
+        int sol2TopDown = knapsackTopDown(weights, values, capacity, weights.length);
         System.out.println("Solution (mem): " + sol2 + " is " + (sol2 == 4));
         System.out.println("Solution (top down): " + sol2TopDown + " is " + (sol2TopDown == 4));
     }
 
-    private static int knapsack(int[] weights, int[] values, int capacity, int size, int[][] cachedValues) {
+    // Solution using memoization
+    private static int knapsackMemoization(int[] weights, int[] values, int capacity, int size) {
         if (capacity == 0 || size == 0) {
             return 0;
         }
 
         if (weights[size - 1] <= capacity) {
-            cachedValues[size][capacity] = Math.max(values[size - 1] + knapsack(weights, values, capacity - weights[size - 1], size - 1, cachedValues),
-                    knapsack(weights, values, capacity, size - 1, cachedValues));
+            return Math.max(
+                    values[size - 1] + knapsackMemoization(weights, values, capacity - weights[size - 1], size - 1),
+                    knapsackMemoization(weights, values, capacity, size - 1)
+            );
         } else {
-            cachedValues[size][capacity] = knapsack(weights, values, capacity, size - 1, cachedValues);
+            return knapsackMemoization(weights, values, capacity, size - 1);
         }
-        return cachedValues[size][capacity];
     }
 
     /*
@@ -62,7 +62,8 @@ public class Q2KnapsackProblem {
 
      */
 
-    private static int topDown(int[] weights, int[] values, int capacity, int size) {
+    // Solution using top down approach
+    private static int knapsackTopDown(int[] weights, int[] values, int capacity, int size) {
         int[][] table = new int[size + 1][capacity + 1];
 
         for (int i = 0; i < table.length; i++) {
@@ -81,7 +82,7 @@ public class Q2KnapsackProblem {
                             table[i - 1][j]
                     );
                 } else {
-                    table[i][j] = table[i-1][j];
+                    table[i][j] = table[i - 1][j];
                 }
             }
         }
