@@ -1,6 +1,6 @@
 package kit.interview.design_patterns.creational_patterns.p5_abstract_factory;
 
-import design_patterns.creational_patterns.p5_abstract_factory.credit_card.CreditCard;
+import kit.interview.design_patterns.creational_patterns.p5_abstract_factory.credit_card.CreditCard;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilder;

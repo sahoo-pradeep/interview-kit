@@ -1,6 +1,6 @@
 package kit.interview.java_problems.thread;
 
-import utils.MyLogger;
+import kit.interview.utils.MyLogger;
 
 /*
 Create thread using:

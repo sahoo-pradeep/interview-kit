@@ -1,8 +1,8 @@
 package kit.interview.design_patterns.behavioral_patterns.p1_chain_of_responsibility;
 
-import design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.CEO;
-import design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.Director;
-import design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.VP;
+import kit.interview.design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.CEO;
+import kit.interview.design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.Director;
+import kit.interview.design_patterns.behavioral_patterns.p1_chain_of_responsibility.handler.VP;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;

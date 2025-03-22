@@ -1,11 +1,11 @@
 package kit.interview.design_patterns.creational_patterns.p5_abstract_factory;
 
-import design_patterns.creational_patterns.p5_abstract_factory.credit_card.AmexGoldCreditCard;
-import design_patterns.creational_patterns.p5_abstract_factory.credit_card.AmexPlatinumCreditCard;
-import design_patterns.creational_patterns.p5_abstract_factory.credit_card.CreditCard;
-import design_patterns.creational_patterns.p5_abstract_factory.validator.AmexGoldValidator;
-import design_patterns.creational_patterns.p5_abstract_factory.validator.AmexPlatinumValidator;
-import design_patterns.creational_patterns.p5_abstract_factory.validator.Validator;
+import kit.interview.design_patterns.creational_patterns.p5_abstract_factory.credit_card.AmexGoldCreditCard;
+import kit.interview.design_patterns.creational_patterns.p5_abstract_factory.credit_card.AmexPlatinumCreditCard;
+import kit.interview.design_patterns.creational_patterns.p5_abstract_factory.validator.AmexGoldValidator;
+import kit.interview.design_patterns.creational_patterns.p5_abstract_factory.validator.AmexPlatinumValidator;
+import kit.interview.design_patterns.creational_patterns.p5_abstract_factory.validator.Validator;
+import kit.interview.design_patterns.creational_patterns.p5_abstract_factory.credit_card.CreditCard;
 
 //Factory 1 : AmexFactory
 public class AmexFactory extends CreditCardFactory {

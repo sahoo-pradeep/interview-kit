@@ -1,6 +1,7 @@
 package kit.interview.java_problems.basic_interview;
 
-import java_problems.utils.Clock;
+
+import kit.interview.java_problems.utils.Clock;
 
 public class StringConcat {
     public static void main(String[] args) {

@@ -6,7 +6,7 @@ A thread trying to enqueue in a full queue is blocked until some other thread de
 A thread trying to dequeue in an empty queue is blocked until some other thread enqueue a value.
  */
 
-import utils.MyLogger;
+import kit.interview.utils.MyLogger;
 
 import java.util.LinkedList;
 

@@ -1,6 +1,7 @@
 package kit.interview.design_patterns.behavioral_patterns.p5_mediator;
 
-import utils.MyLogger;
+
+import kit.interview.utils.MyLogger;
 
 import java.util.Timer;
 import java.util.TimerTask;

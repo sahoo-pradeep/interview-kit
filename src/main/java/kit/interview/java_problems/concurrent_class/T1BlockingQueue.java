@@ -1,6 +1,7 @@
 package kit.interview.java_problems.concurrent_class;
 
-import utils.MyLogger;
+
+import kit.interview.utils.MyLogger;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
